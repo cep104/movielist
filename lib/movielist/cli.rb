@@ -25,9 +25,9 @@ This weeks box office results:
   end
   
   def menu 
-    puts "Enter the number of the movie you would like to learn more about:"
     input = nil
     while input != "exit"
+    puts "Enter the number of the movie you would like to learn more about, type list to see movies again or type exit"
       input =gets.chomp.downcase
       case input 
       when "1"
@@ -50,6 +50,10 @@ This weeks box office results:
         puts "info on movie 9"
       when "10"
         puts "info on movie 10"
+      when "list"
+        list_movies
+      else 
+        puts "Not sure what you want type list or exit"
       end
     end
   end
