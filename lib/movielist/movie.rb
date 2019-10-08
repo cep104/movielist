@@ -1,5 +1,7 @@
 class Movielist::Movie 
+  
   attr_accessor :name, :total, :weeks, :url
+  
   def self.boxoffice 
    puts <<-DOC 
 01. Movie 01, box office total, weeks in theater
@@ -12,19 +14,19 @@ class Movielist::Movie
 08. Movie 08, box office total, weeks in theater
 09. Movie 09, box office total, weeks in theater
 10. Movie 10, box office total, weeks in theater 
-
  DOC
-movie_1 = Movie.new 
+movie_1 = self.new 
 movie_1.name = "Movie 01"
 movie_1.total = "box office total"
 movie_1.weeks = "weeks in theater"
 movie_1.url = "https://www.boxofficemojo.com/weekend/chart/?view=main&yr=2019&wknd=40&p=.htm"
 
-movie_2 = Movie.new 
+movie_2 = self.new 
 movie_2.name = "Movie 02"
-movie_2.total = "box office total"
-movie_2.weeks = "weeks in theater"
+movie_2.total = "box office total 2"
+movie_2.weeks = "weeks in theater 2"
 movie_2.url = "https://www.boxofficemojo.com/weekend/chart/?view=main&yr=2019&wknd=40&p=.htm"
+
 [movie_1, movie_2]
   end
 end 
