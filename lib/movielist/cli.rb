@@ -26,6 +26,7 @@ This weeks box office results:
   
   def menu 
     puts "Enter the number of the movie you would like to learn more about:"
+    input = nil
     while input != "exit"
       input =gets.chomp.downcase
       case input 
@@ -53,5 +54,8 @@ This weeks box office results:
     end
   end
   
+  def googbye 
+    puts "Come back next time for more box office results!"
+  end
   
 end
