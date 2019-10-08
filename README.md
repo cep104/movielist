@@ -1,10 +1,7 @@
-HELLO WORLD
 
 # Movielist
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/movielist`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This gem is to show you the most recent top box office movies of the week. Once you get the list of movies it gives you an option to choose a movie you would like more information on. Once you pick a selection it gives you a description of the selected movie and gives you the movies Rotten Tomato and IMDB scores. 
 
 ## Installation
 
