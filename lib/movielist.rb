@@ -1,6 +1,8 @@
-require "movielist/version"
+require_relative "./movielist/version"
 
-module Movielist
-  class Error < StandardError; end
+# module Movielist
+  # class Error < StandardError; end
   # Your code goes here...
-end
+# end
+
+require_relative './movielist/cli'
