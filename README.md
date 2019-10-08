@@ -2,6 +2,22 @@
 # Movielist
 
 This gem is to show you the most recent top box office movies of the week. Once you get the list of movies it gives you an option to choose a movie you would like more information on. Once you pick a selection it gives you a description of the selected movie and gives you the movies Rotten Tomato and IMDB scores. 
+user types in box-office-results
+list of top 10 box office results pops up 
+
+1. Movie 1, box office total, weeks in theater
+2. Movie 2, box office total, weeks in theater
+3. Movie 3, box office total, weeks in theater
+4. Movie 4, box office total, weeks in theater
+5. Movie 5, box office total, weeks in theater
+6. Movie 6, box office total, weeks in theater
+7. Movie 7, box office total, weeks in theater
+8. Movie 8, box office total, weeks in theater
+9. Movie 9, box office total, weeks in theater
+10. Movie 10,box office total, weeks in theater 
+ which movie would you like to learn more about?
+1
+website: https://www.boxofficemojo.com/weekend/chart/
 
 ## Installation
 
@@ -37,6 +53,11 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/'candi
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 
+## Authors
+  -Candice Peters
+
 ## Code of Conduct
 
 Everyone interacting in the Movielist project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'candicepeters'/movielist/blob/master/CODE_OF_CONDUCT.md).
+
+## Acknowledgments
