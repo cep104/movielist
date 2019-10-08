@@ -6,3 +6,4 @@ require_relative "./movielist/version"
 # end
 
 require_relative './movielist/cli'
+require_relative './movielist/movie'
