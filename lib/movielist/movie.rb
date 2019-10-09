@@ -13,6 +13,8 @@ class Movielist::Movie
   
   def self.scrape_mojo
     doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/weekend/chart/?view=main&yr=2019&wknd=40&p=.html"))
+    selector = "tr td a"
+    anchors = doc.css(selector)
     binding.pry
   end
 end 
