@@ -8,9 +8,9 @@ class Movielist::CLI
   
   def list_movies
   puts " This weeks box office results:"
- @movie = Movielist::Movie.boxoffice
-    @movie.each.each.with_index(1) do |movies, index| 
-      puts "#{index}. #{movies}"
+ @movies = Movielist::Movie.boxoffice
+    @movies.each.each.with_index(1) do |movie, index| 
+      puts "#{index}. #{movie.name} - #{movie.total} - #{movie.weeks}"
     end
   end
   
@@ -20,7 +20,8 @@ class Movielist::CLI
     puts "Enter the number of the movie you would like to learn more about, type list to see movies again or type exit"
       input =gets.chomp.downcase
       if input.to_i > 0 
-        puts @movie[input.to_i-1]
+        the_movie =  @movies[input.to_i-1]
+        puts "#{the_movie.name} - #{the_movie.total} - #{the_movie.weeks}"
       elsif input == "list"
         list_movies
         else
