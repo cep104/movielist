@@ -1,3 +1,4 @@
+require 'nokogiri'
 require_relative "./movielist/version"
 
 # module Movielist
@@ -7,4 +8,5 @@ require_relative "./movielist/version"
 
 require_relative './movielist/cli'
 require_relative './movielist/movie'
+
 
