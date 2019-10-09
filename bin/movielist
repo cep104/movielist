@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/movielist'
+require "bundler/setup"
+require "movielist"
 
 Movielist::CLI.new.call
