@@ -16,10 +16,10 @@ class Movielist::Movie
     selector = "tr td a"
     anchors = doc.css(selector)
     movie_titles = anchors.map{|a| a.text}
-    movie_one_title = movie_titles[17].split.first
-    movie_two_title = movie_titles[19]
+    movie_one_name = movie_titles[17].split.first
+    movie_two_name = movie_titles[19]
     list = doc.css("tr td b").text.split
-    movie_two_total = list[11].chomp("Abominable$11,921,855Downton").gsub("(2019)","")
+    movie_one_total = list[11].chomp("Abominable$11,921,855Downton").gsub("(2019)","")
     binding.pry
   end
 end 
