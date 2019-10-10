@@ -15,6 +15,9 @@ class Movielist::Movie
     doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/weekend/chart/?view=main&yr=2019&wknd=40&p=.html"))
     selector = "tr td a"
     anchors = doc.css(selector)
+    movie_mojo_title = anchors.map{|a| a.text}
+    movie_one_title=movie_mojo_title[17].split.first
+    
     binding.pry
   end
 end 
