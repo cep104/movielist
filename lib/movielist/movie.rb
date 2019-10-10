@@ -16,8 +16,8 @@ class Movielist::Movie
     selector = "tr td a"
     anchors = doc.css(selector)
     movie_titles = anchors.map{|a| a.text}
-    movie_one_title = movie_mojo_title[17].split.first
-    movie_two_title = movie_mojo_title[19]
+    movie_one_title = movie_title[17].split.first
+    movie_two_title = movie_title[19]
     
     binding.pry
   end
