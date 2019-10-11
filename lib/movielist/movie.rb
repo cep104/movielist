@@ -20,17 +20,22 @@ class Movielist::Movie
     movie.name = anchors.map{|a| a.text}[1].chomp(" (2019)")
     movie.total = anchors.map{|a| a.text}[2]
     movie.studio = anchors.map{|a| a.text}[3]
+    doc_rotten = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/joker_2019"))
+    rotten = doc_rotten.search("span.mop-ratings-wrap__percentage").text.split(" ")
+    movie.rm_score = rotten[0]
+    movie.audience_score = rotten[1]
+    movie.synopsis = doc_rotten.search("div#movieSynopsis").text.strip
     movie
-    
-  end
-  
-  def self.scrape_tomato_joker
-    doc = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/joker_2019"))
-    selector = doc.search("span.mop-ratings-wrap__percentage").text.split(" ")
-    rm_score = selector[0]
-    audience_score = selector[1]
-    synopsis = doc.search("div#movieSynopsis").text.strip
     binding.pry
   end
+  
+  # def self.scrape_tomato_joker
+  #   doc = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/joker_2019"))
+  #   selector = doc.search("span.mop-ratings-wrap__percentage").text.split(" ")
+  #   rm_score = selector[0]
+  #   audience_score = selector[1]
+  #   synopsis = doc.search("div#movieSynopsis").text.strip
+  #   binding.pry
+  # end
  
 end 
