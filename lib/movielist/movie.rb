@@ -1,6 +1,6 @@
 class Movielist::Movie 
   
-  attr_accessor :name, :total, :studio
+  attr_accessor :name, :total, :studio, :rm_score, :audience_score, :synopsis
   
   def self.boxoffice 
     self.scrape_movies
@@ -24,10 +24,10 @@ class Movielist::Movie
     
   end
   
-  def self.scrape_imdb_joker
+  def self.scrape_tomato_joker
     doc = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/joker_2019"))
     selector = doc.search("span.mop-ratings-wrap__percentage").text.split(" ")
-    tomatometer = selector[0]
+    rm_score = selector[0]
     audience_score = selector[1]
     synopsis = doc.search("div#movieSynopsis").text.strip
     binding.pry
