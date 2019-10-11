@@ -23,4 +23,9 @@ class Movielist::Movie
     movie
     
   end
+  
+  def self.scrape_imdb_joker
+    doc = Nokogiri::HTML(open("https://www.imdb.com/title/tt7286456/?ref_=fn_al_tt_1"))
+    
+  end
 end 
