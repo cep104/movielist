@@ -20,6 +20,7 @@ class Movielist::Movie
     movie_two_name = movie_titles[19]
     list = doc.css("tr td b").text.split
     movie_one_total = list[11].chomp("Abominable$11,921,855Downton").gsub("(2019)","")
+    movie_two_total = list[11].chomp("Downton").gsub("(2019)$96,202,337Abominable","")
     binding.pry
   end
 end 
