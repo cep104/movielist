@@ -24,9 +24,9 @@ class Movielist::CLI
         the_movie =  @movies[input.to_i-1]
         puts "#{the_movie.name}"
         puts" Rotten Tomatoes Score - #{the_movie.rm_score}"
-        puts" Audience Score- #{the_movie.audience_score}"
+        puts" Audience Score - #{the_movie.audience_score}"
         puts""
-        puts" Synopsis-  #{the_movie.synopsis}"
+        puts" Synopsis: #{the_movie.synopsis}"
         puts""
       elsif input == "list"
         list_movies
