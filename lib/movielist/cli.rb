@@ -11,6 +11,7 @@ class Movielist::CLI
  @movies = Movielist::Movie.boxoffice
     @movies.each.each.with_index(1) do |movie, index| 
       puts "#{index}. #{movie.name} - #{movie.total} - #{movie.studio}"
+      
     end
   end
   

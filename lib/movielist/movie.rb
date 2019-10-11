@@ -1,6 +1,6 @@
 class Movielist::Movie 
   
-  attr_accessor :name, :total, :studio, :url
+  attr_accessor :name, :total, :studio
   
   def self.boxoffice 
     self.scrape_movies
@@ -9,6 +9,7 @@ class Movielist::Movie
   def self.scrape_movies
     movies = []
     movies << self.scrape_joker
+    
   end
   
   def self.scrape_joker
@@ -20,6 +21,6 @@ class Movielist::Movie
     movie.total = anchors.map{|a| a.text}[2]
     movie.studio = anchors.map{|a| a.text}[3]
     movie
-    # binding.pry
+    
   end
 end 
