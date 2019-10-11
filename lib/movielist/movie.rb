@@ -25,7 +25,12 @@ class Movielist::Movie
   end
   
   def self.scrape_imdb_joker
-    doc = Nokogiri::HTML(open("https://www.imdb.com/title/tt7286456/?ref_=fn_al_tt_1"))
-    
+    doc = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/joker_2019"))
+    selector = doc.search("span.mop-ratings-wrap__percentage").text.split(" ")
+    tomatometer = selector[0]
+    audience_score = selector[1]
+    synopsis = doc.search("div#movieSynopsis").text.strip
+    binding.pry
   end
+ 
 end 
