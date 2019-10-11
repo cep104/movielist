@@ -8,7 +8,7 @@ class Movielist::Movie
   
   def self.scrape_movies
     movies = []
-    movies << self.scrape_mojo
+    movies << self.scrape_joker
   end
   
   # def self.scrape_mojo
@@ -32,9 +32,9 @@ class Movielist::Movie
     movie = self.new
     selector = "table td b"
     anchors = doc.css(selector)
-    name = anchors.map{|a| a.text}[1].chomp(" (2019)")
-    total = anchors.map{|a| a.text}[2]
-    studio = anchors.map{|a| a.text}[3]
+    self.name = anchors.map{|a| a.text}[1].chomp(" (2019)")
+    self.total = anchors.map{|a| a.text}[2]
+    self.studio = anchors.map{|a| a.text}[3]
     movie
     binding.pry
   end
