@@ -26,7 +26,7 @@ class Movielist::Movie
     movie.audience_score = rotten[1]
     movie.synopsis = doc_rotten.search("div#movieSynopsis").text.strip
     movie
-    binding.pry
+    # binding.pry
   end
   
   # def self.scrape_tomato_joker

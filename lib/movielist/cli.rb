@@ -22,7 +22,7 @@ class Movielist::CLI
       input =gets.chomp.downcase
       if input.to_i > 0 
         the_movie =  @movies[input.to_i-1]
-        puts "#{the_movie.name} - #{the_movie.total} - #{the_movie.studio}"
+        puts "#{the_movie.name} - #{the_movie.rm_score} - #{the_movie.audience_score} -  #{the_movie.synopsis}"
       elsif input == "list"
         list_movies
         else
