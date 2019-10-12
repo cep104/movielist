@@ -22,9 +22,10 @@ class Movielist::CLI
       input =gets.chomp.downcase
       if input.to_i > 0 && input.to_i < 11
         the_movie =  @movies[input.to_i-1]
-        puts "#{the_movie.name}"
-        puts" Rotten Tomatoes Score - #{the_movie.rm_score}"
-        puts" Audience Score - #{the_movie.audience_score}"
+        puts "#{the_movie.name}".center(75).upcase
+        puts""
+        puts" Rotten Tomatoes Score - #{the_movie.rm_score}".center(75)
+        puts" Audience Score - #{the_movie.audience_score}".center(75)
         puts""
         puts" Synopsis: #{the_movie.synopsis}"
         puts""
