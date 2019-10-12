@@ -1,7 +1,7 @@
 
 # Movielist
 
-This gem is to show you the most recent top box office movies of the week. Once you get the list of movies it gives you an option to choose a movie you would like more information on. Once you pick a selection it gives you a description of the selected movie and gives you the movies Rotten Tomato and IMDB scores. 
+This gem is to show you the most recent top box office movies of the week. Once you get the list of movies it gives you an option to choose a movie you would like more information on. Once you pick a selection it gives you a description of the selected movie and gives you the movies Rotten Tomato and Audience scores. 
 
 ## Installation
 
@@ -21,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+this gem should be used for finding the top box office movies for the week and getting information on them. 
 
 ## Development
 
