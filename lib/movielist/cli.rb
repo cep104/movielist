@@ -20,7 +20,7 @@ class Movielist::CLI
     while input != "exit"
     puts "Enter the number of the movie you would like to learn more about, type list to see movies again or type exit"
       input =gets.chomp.downcase
-      if input.to_i > 0 && input.to_i < 6
+      if input.to_i > 0 && input.to_i < 11
         the_movie =  @movies[input.to_i-1]
         puts "#{the_movie.name}"
         puts" Rotten Tomatoes Score - #{the_movie.rm_score}"

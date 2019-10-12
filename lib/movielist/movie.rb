@@ -13,6 +13,11 @@ class Movielist::Movie
     movies << self.scrape_moviethree
     movies << self.scrape_moviefour
     movies << self.scrape_moviefive
+    movies << self.scrape_moviesix
+    movies << self.scrape_movieseven
+    movies << self.scrape_movieeight
+    movies << self.scrape_movienine
+    movies << self.scrape_movieten
     
   end
   
@@ -99,4 +104,90 @@ class Movielist::Movie
     movie
    
  end
+ 
+ def self.scrape_moviesix 
+   doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/movies/?id=judy.htm"))
+    movie = self.new
+    selector = "table td b"
+    anchors = doc.css(selector)
+    movie.name = anchors.map{|a| a.text}[1].chomp(" (2019)")
+    movie.total = anchors.map{|a| a.text}[2]
+    movie.studio = anchors.map{|a| a.text}[3]
+    doc_rotten = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/judy_2019"))
+    rotten = doc_rotten.search("span.mop-ratings-wrap__percentage").text.split(" ")
+    movie.rm_score = rotten[0]
+    movie.audience_score = rotten[1]
+    movie.synopsis = doc_rotten.search("div#movieSynopsis").text.strip
+    movie
+   
+ end
+ 
+ def self.scrape_movieseven
+   doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/movies/?id=adastra.htm"))
+    movie = self.new
+    selector = "table td b"
+    anchors = doc.css(selector)
+    movie.name = anchors.map{|a| a.text}[1].chomp(" (2019)")
+    movie.total = anchors.map{|a| a.text}[2]
+    movie.studio = anchors.map{|a| a.text}[3]
+    doc_rotten = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/ad_astra"))
+    rotten = doc_rotten.search("span.mop-ratings-wrap__percentage").text.split(" ")
+    movie.rm_score = rotten[0]
+    movie.audience_score = rotten[1]
+    movie.synopsis = doc_rotten.search("div#movieSynopsis").text.strip
+    movie
+   
+ end
+ 
+  def self.scrape_movieeight
+   doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/movies/?id=rambolastblood.htm"))
+    movie = self.new
+    selector = "table td b"
+    anchors = doc.css(selector)
+    movie.name = anchors.map{|a| a.text}[1].chomp(" (2019)")
+    movie.total = anchors.map{|a| a.text}[2]
+    movie.studio = anchors.map{|a| a.text}[3]
+    doc_rotten = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/rambo_last_blood"))
+    rotten = doc_rotten.search("span.mop-ratings-wrap__percentage").text.split(" ")
+    movie.rm_score = rotten[0]
+    movie.audience_score = rotten[1]
+    movie.synopsis = doc_rotten.search("div#movieSynopsis").text.strip
+    movie
+   
+ end
+ 
+  def self.scrape_movienine 
+   doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/movies/?id=war.htm"))
+    movie = self.new
+    selector = "table td b"
+    anchors = doc.css(selector)
+    movie.name = anchors.map{|a| a.text}[1].chomp(" (2019)")
+    movie.total = anchors.map{|a| a.text}[2]
+    movie.studio = anchors.map{|a| a.text}[3]
+    doc_rotten = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/war_2019"))
+    rotten = doc_rotten.search("span.mop-ratings-wrap__percentage").text.split(" ")
+    movie.rm_score = rotten[0]
+    movie.audience_score = rotten[1]
+    movie.synopsis = doc_rotten.search("div#movieSynopsis").text.strip
+    movie
+   
+ end
+ 
+  def self.scrape_movieten
+   doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/movies/?id=untitleduniversal2019.htm"))
+    movie = self.new
+    selector = "table td b"
+    anchors = doc.css(selector)
+    movie.name = anchors.map{|a| a.text}[1].chomp(" (2019)")
+    movie.total = anchors.map{|a| a.text}[2]
+    movie.studio = anchors.map{|a| a.text}[3]
+    doc_rotten = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/good_boys_2019"))
+    rotten = doc_rotten.search("span.mop-ratings-wrap__percentage").text.split(" ")
+    movie.rm_score = rotten[0]
+    movie.audience_score = rotten[1]
+    movie.synopsis = doc_rotten.search("div#movieSynopsis").text.strip
+    movie
+   
+ end
+ 
 end 
