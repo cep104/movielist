@@ -27,14 +27,14 @@ class Movielist::CLI
         puts" Rotten Tomatoes Score - #{the_movie.rm_score}".center(75)
         puts" Audience Score - #{the_movie.audience_score}".center(75)
         puts""
-        puts" Synopsis: #{the_movie.synopsis}"
+        puts"**Synopsis: #{the_movie.synopsis}"
         puts""
       elsif input == "list"
         list_movies
       elsif input == "exit"
         goodbye
       else
-        puts "Not sure what you want type list or exit"
+        puts "Invalid entry. Please type list or exit"
       end
     end
   end
