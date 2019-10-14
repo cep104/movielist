@@ -27,6 +27,7 @@ class Movielist::CLI
         puts""
         puts"Rotten Tomatoes Score - #{the_movie.rm_score}"
         puts"Audience Score - #{the_movie.audience_score}"
+        puts"All Time Domestic Box Office Rank - #{the_movie.rank}"
         puts""
         puts"**Synopsis: #{the_movie.synopsis}"
         puts""
