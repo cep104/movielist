@@ -3,11 +3,13 @@ class Movielist::CLI
 
   def call
     list_movies
+    puts ""
     menu
   end
 
   def list_movies
-  puts " This week's box office results:"
+  puts " This week's box office results:".upcase
+  puts ""
  @movies = Movielist::Movie.boxoffice
     @movies.each.each.with_index(1) do |movie, index|
       puts "#{index}. #{movie.name} - #{movie.total} - #{movie.studio}"
