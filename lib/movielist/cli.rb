@@ -2,6 +2,7 @@
 class Movielist::CLI
 
   def call
+    Movielist::Scraper.boxoffice
     list_movies
     puts ""
     menu
@@ -10,10 +11,9 @@ class Movielist::CLI
   def list_movies
   puts " This week's box office results:".upcase
   puts ""
- @movies = Movielist::Movie.boxoffice
+ @movies = Movielist::Movie.all
     @movies.each.each.with_index(1) do |movie, index|
       puts "#{index}. #{movie.name} - #{movie.total} - #{movie.studio}"
-
     end
   end
 

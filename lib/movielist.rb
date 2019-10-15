@@ -10,5 +10,4 @@ require_relative "./movielist/version"
 
 require_relative './movielist/cli'
 require_relative './movielist/movie'
-
-
+require_relative './movielist/scraper'
