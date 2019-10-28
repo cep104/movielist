@@ -38,12 +38,12 @@ def self.boxoffice
 
 
   def self.scrape_movie_two
-    doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/release/rl252151297/?ref_=bo_hm_rd"))
+    doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt6324278/?ref_=bo_se_r_1"))
     movie = Movielist::Movie.new
-    movie.name = doc.css("h1").text
+    movie.name = doc.css("h1").text.chomp("(2019)")
     movie.total = doc.css("span .money").text.split("$")[1]
-    movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Warner Bros")
-    rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7286456/rankings/?ref_=bo_tt_tab#tabs"))
+    movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Universal Pictures")
+    rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt6324278/rankings/?ref_=bo_tt_tab#tabs"))
     movie.rank = rank_site.css("td").text.split("Grosses")[1]
     doc_rotten = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/abominable"))
     rotten = doc_rotten.search("span.mop-ratings-wrap__percentage").text.split(" ")
@@ -55,12 +55,12 @@ def self.boxoffice
  end
 
  def self.scrape_movie_three
-    doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/release/rl252151297/?ref_=bo_hm_rd"))
+    doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt6398184/?ref_=bo_se_r_1"))
     movie = Movielist::Movie.new
-    movie.name = doc.css("h1").text
+    movie.name = doc.css("h1").text.chomp("(2019)")
     movie.total = doc.css("span .money").text.split("$")[1]
-    movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Warner Bros")
-    rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7286456/rankings/?ref_=bo_tt_tab#tabs"))
+    movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Focus Features")
+    rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt6398184/rankings/?ref_=bo_tt_tab#tabs"))
     movie.rank = rank_site.css("td").text.split("Grosses")[1]
      doc_rotten = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/downton_abbey"))
      rotten = doc_rotten.search("span.mop-ratings-wrap__percentage").text.split(" ")
@@ -72,12 +72,12 @@ def self.boxoffice
   end
 
   def self.scrape_movie_four
-    doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/release/rl252151297/?ref_=bo_hm_rd"))
+    doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt5503686/?ref_=bo_se_r_1"))
     movie = Movielist::Movie.new
-    movie.name = doc.css("h1").text
+    movie.name = doc.css("h1").text.chomp("(2019)")
     movie.total = doc.css("span .money").text.split("$")[1]
-    movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Warner Bros")
-    rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7286456/rankings/?ref_=bo_tt_tab#tabs"))
+    movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("STX Entertainment")
+    rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt5503686/rankings/?ref_=bo_tt_tab#tabs"))
     movie.rank = rank_site.css("td").text.split("Grosses")[1]
      doc_rotten = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/hustlers_2019"))
      rotten = doc_rotten.search("span.mop-ratings-wrap__percentage").text.split(" ")
@@ -89,12 +89,12 @@ def self.boxoffice
   end
 
   def self.scrape_movie_five
-    doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/release/rl252151297/?ref_=bo_hm_rd"))
+    doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7349950/?ref_=bo_se_r_1"))
     movie = Movielist::Movie.new
-    movie.name = doc.css("h1").text
+    movie.name = doc.css("h1").text.chomp("(2019)")
     movie.total = doc.css("span .money").text.split("$")[1]
     movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Warner Bros")
-    rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7286456/rankings/?ref_=bo_tt_tab#tabs"))
+    rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7349950/rankings/?ref_=bo_tt_tab#tabs"))
     movie.rank = rank_site.css("td").text.split("Grosses")[1]
      doc_rotten = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/it_chapter_two"))
      rotten = doc_rotten.search("span.mop-ratings-wrap__percentage").text.split(" ")
@@ -106,12 +106,12 @@ def self.boxoffice
   end
 
   def self.scrape_movie_six
-   doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/release/rl252151297/?ref_=bo_hm_rd"))
+   doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7549996/?ref_=bo_se_r_1"))
     movie = Movielist::Movie.new
-    movie.name = doc.css("h1").text
+    movie.name = doc.css("h1").text.chomp("(2019)")
     movie.total = doc.css("span .money").text.split("$")[1]
-    movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Warner Bros")
-    rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7286456/rankings/?ref_=bo_tt_tab#tabs"))
+    movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Roadside Attractions")
+    rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7549996/rankings/?ref_=bo_tt_tab#tabs"))
     movie.rank = rank_site.css("td").text.split("Grosses")[1]
     doc_rotten = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/judy_2019"))
     rotten = doc_rotten.search("span.mop-ratings-wrap__percentage").text.split(" ")
@@ -127,8 +127,8 @@ def self.boxoffice
     movie = Movielist::Movie.new
     movie.name = doc.css("h1").text
     movie.total = doc.css("span .money").text.split("$")[1]
-    movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Warner Bros")
-    rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7286456/rankings/?ref_=bo_tt_tab#tabs"))
+    movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Roadside Attractions")
+    rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7549996/rankings/?ref_=bo_tt_tab#tabs"))
     movie.rank = rank_site.css("td").text.split("Grosses")[1]
     doc_rotten = Nokogiri::HTML(open("https://www.rottentomatoes.com/m/ad_astra"))
     rotten = doc_rotten.search("span.mop-ratings-wrap__percentage").text.split(" ")
