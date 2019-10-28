@@ -125,7 +125,7 @@ def self.boxoffice
  def self.scrape_movie_seven
   doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt2935510/?ref_=bo_se_r_1"))
     movie = Movielist::Movie.new
-    movie.name = doc.css("h1").text
+    movie.name = doc.css("h1").text.chomp("(2019)")
     movie.total = doc.css("span .money").text.split("$")[1]
     movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Fox")
     rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt2935510/rankings/?ref_=bo_tt_tab#tabs"))
@@ -142,7 +142,7 @@ def self.boxoffice
   def self.scrape_movie_eight
    doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt1206885/?ref_=bo_se_r_1"))
     movie = Movielist::Movie.new
-    movie.name = doc.css("h1").text
+    movie.name = doc.css("h1").text.chomp("(2019)")
     movie.total = doc.css("span .money").text.split("$")[1]
     movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Lionsgate")
     rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt1206885/rankings/?ref_=bo_tt_tab#tabs"))
@@ -159,7 +159,7 @@ def self.boxoffice
   def self.scrape_movie_nine
    doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7430722/?ref_=bo_se_r_1"))
     movie = Movielist::Movie.new
-    movie.name = doc.css("h1").text
+    movie.name = doc.css("h1").text.chomp("(2019)")
     movie.total = doc.css("span .money").text.split("$")[1]
     movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Yash Raj Films")
     rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7430722/rankings/?ref_=bo_tt_tab#tabs"))
@@ -176,7 +176,7 @@ def self.boxoffice
   def self.scrape_movie_ten
    doc = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7343762/?ref_=bo_se_r_1"))
     movie = Movielist::Movie.new
-    movie.name = doc.css("h1").text
+    movie.name = doc.css("h1").text.chomp("(2019)")
     movie.total = doc.css("span .money").text.split("$")[1]
     movie.studio = doc.css("div.a-section.a-spacing-none.mojo-gutter.mojo-summary-table > div.a-section.a-spacing-none.mojo-summary-values.mojo-hidden-from-mobile").text.strip.split(".")[0].slice("Universal Pictures")
     rank_site = Nokogiri::HTML(open("https://www.boxofficemojo.com/title/tt7343762/rankings/?ref_=bo_tt_tab#tabs"))
