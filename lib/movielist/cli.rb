@@ -12,7 +12,7 @@ class Movielist::CLI
   puts " This week's box office results:".upcase
   puts ""
  @movies = Movielist::Movie.all
-    @movies.each.each.with_index(1) do |movie, index|
+    @movies.each.with_index(1) do |movie, index|
       puts "#{index}. #{movie.name} - #{movie.total} - #{movie.studio}"
     end
   end
